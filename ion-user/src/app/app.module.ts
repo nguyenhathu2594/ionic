@@ -1,3 +1,4 @@
+import { UrsPage } from './../pages/user/urs/urs';
 import { UserPage } from './../pages/user/user';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -12,7 +13,8 @@ import { HomePage } from '../pages/home/home';
   declarations: [
     MyApp,
     HomePage,
-    UserPage
+    UserPage,
+    UrsPage
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,8 @@ import { HomePage } from '../pages/home/home';
   entryComponents: [
     MyApp,
     HomePage,
-    UserPage
+    UserPage,
+    UrsPage
   ],
   providers: [
     StatusBar,
