@@ -1,3 +1,5 @@
+import { RegisterPage } from './../register/register';
+import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
@@ -11,4 +13,11 @@ export class HomePage {
 
   }
 
+  dangNhap(){
+    this.navCtrl.push(LoginPage);
+  }
+
+  dangKy(){
+    this.navCtrl.push(RegisterPage);
+  }
 }

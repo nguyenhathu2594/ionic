@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Đăng nhập</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAj_XbzQvXBfUyuuFWrPUwqIHGh8gd3k88",
+    authDomain: "test-pj-d89a3.firebaseapp.com",
+    databaseURL: "https://test-pj-d89a3.firebaseio.com",
+    projectId: "test-pj-d89a3",
+    storageBucket: "test-pj-d89a3.appspot.com",
+    messagingSenderId: "264410068189"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Tên đăng nhập</ion-label>
+      <ion-input type="text" #username></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Mật khẩu</ion-label>
+      <ion-input type="password" #password></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <div padding>
+    <button block ion-button item-left (click)="dangNhapClick()">
+      Đăng nhập
+    </button>
+  </div>
+</ion-content>
