@@ -1,5 +1,6 @@
+import { QuotesService } from './../../services/quotes';
 import { Quote } from './../../data/quote.interface';
-import { NavParams } from 'ionic-angular';
+import { NavParams, AlertController } from 'ionic-angular';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,14 +9,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuotesPage implements OnInit {
   quoteGroup: { category: string, quotes: Quote[], icon: string };
-  constructor(private navParams: NavParams) { }
+  constructor(
+    private navParams: NavParams,
+    private alertCtrl: AlertController,
+    private quotesService: QuotesService) { }
 
   ngOnInit() {
     this.quoteGroup = this.navParams.data;
   }
 
-  onAddToFavorite(quote){
+  onAddToFavorite(selectedQuote: Quote) {
+    const alert = this.alertCtrl.create({
+      title: 'Thích Quote',
+      message: 'Bạn có đồng ý thêm quote này vào danh mục yêu thích?',
+      buttons: [
+        {
+          text: 'Có',
+          handler: () => {
+            this.quotesService.addQuoteToFavorites(selectedQuote);
+          }
+        }, {
+          text: 'Không',
+          role: 'cancel', //Click ra ngoài thì nó tự nhận đó là 'không'
+          handler: () => {
+            console.log('Không');
+          }
+        }]
+    });
 
+    alert.present();
   }
 
   // ionViewDidLoad() {
