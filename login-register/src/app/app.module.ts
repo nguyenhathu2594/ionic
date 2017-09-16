@@ -1,3 +1,4 @@
+import { LoggedinPage } from './../pages/loggedin/loggedin';
 import { RegisterPage } from './../pages/register/register';
 import { LoginPage } from './../pages/login/login';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,7 +26,8 @@ const firebaseAuth =  {
     MyApp,
     HomePage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    LoggedinPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ const firebaseAuth =  {
     MyApp,
     HomePage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    LoggedinPage
   ],
   providers: [
     StatusBar,
