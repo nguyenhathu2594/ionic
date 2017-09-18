@@ -1,14 +1,25 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Ứng dụng chat
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text" [(ngModel)]="username"></ion-input>
+    </ion-item>
+
+    <!-- <ion-item>
+      <ion-label floating>Mật khẩu</ion-label>
+      <ion-input type="password" [(ngModel)]="pwd"></ion-input>
+    </ion-item> -->
+  </ion-list>
+  <div class="topButton">
+    <button block ion-button outline item-left (click)="loginUser()">Đăng nhập</button>
+    <button block ion-button outline item-left>Đăng ký</button>
+  </div>
 </ion-content>
